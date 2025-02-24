@@ -1,0 +1,31 @@
+{
+  "name": "whatsapp-bot",
+  "description": "A WhatsApp bot using the Cloud API",
+  "version": "1.0.0",
+  "repository": "https://github.com/yourusername/whatsapp-bot",
+  "keywords": ["whatsapp", "bot", "api", "nodejs"],
+  "scripts": {
+    "start": "node index.js"
+  },
+  "env": {
+    "VERIFY_TOKEN": {
+      "description": "Token for webhook verification",
+      "required": true
+    },
+    "ACCESS_TOKEN": {
+      "description": "WhatsApp API access token",
+      "required": true
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
